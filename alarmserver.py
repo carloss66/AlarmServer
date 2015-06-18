@@ -191,6 +191,15 @@ class AlarmServer(asyncore.dispatcher):
                 self._envisalinkclient.send_command('040', '1' + str(query_array['alarmcode'][0]))
             else:
                 self._envisalinkclient.send_command('040', '1' + str(self._config.ALARMCODE))
+        elif query.path == '/api/alarm/panic':
+            channel.pushok(json.dumps({'response' : 'Request to trigger panic alarm received'}))
+            self._envisalinkclient.send_command('060', '3')
+        elif query.path == '/api/alarm/duress':
+            channel.pushok(json.dumps({'response' : 'Request to disarm with duress code received'}))
+            self._envisalinkclient.send_command('620', '0000')
+        elif query.path == '/api/alarm/chime':
+            channel.pushok(json.dumps({'response' : 'Request to enable/disable chime received'}))
+            self._envisalinkclient.send_command('070', '1' + "*4")
         elif query.path == '/api/refresh':
             channel.pushok(json.dumps({'response' : 'Request to refresh data received'}))
             self._envisalinkclient.send_command('001', '')
