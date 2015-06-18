@@ -73,7 +73,7 @@ REST API Info
 
 */api/alarm/panic*
 
-* Triggers panic alarm
+* Triggers panic alarm (police)
 
 */api/alarm/ambulance*
 
