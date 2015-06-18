@@ -85,7 +85,7 @@ REST API Info
 
 */api/alarm/duress*
 
-* Disarms system and triggers duress alarm.  Defaults to the 0000 duress code.
+* Disarms system and triggers duress alarm.  Defaults to 0000 duress code, but can be cofigured in cfg file.
 
 */api/alarm/chime*
 
