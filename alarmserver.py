@@ -203,7 +203,11 @@ class AlarmServer(asyncore.dispatcher):
             self._envisalinkclient.send_command('060', '1')
         elif query.path == '/api/alarm/duress':
             channel.pushok(json.dumps({'response' : 'Request to disarm with duress code received'}))
-            self._envisalinkclient.send_command('620', '0000')
+            #self._envisalinkclient.send_command('620', '0000')
+            if 'duresscode' in query_array:
+                self._envisalinkclient.send_command('620', + str(query_array['duresscode'][0]))
+            else:
+                self._envisalinkclient.send_command('620', + str(self._config.DURESSCODE))
         elif query.path == '/api/alarm/chime':
             channel.pushok(json.dumps({'response' : 'Request to enable/disable chime received'}))
             self._envisalinkclient.send_command('071', '1' + "*4")
