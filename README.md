@@ -75,6 +75,14 @@ REST API Info
 
 * Triggers panic alarm
 
+*/api/alarm/ambulance*
+
+* Triggers ambulance alarm
+
+*/api/alarm/fire*
+
+* Triggers fire alarm
+
 */api/alarm/duress*
 
 * Disarms system and triggers duress alarm.  Defaults to the 0000 duress code.
