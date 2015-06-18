@@ -87,6 +87,7 @@ class AlarmServerConfig():
         self.PUSHOVER_ENABLE = self.read_config_var('pushover', 'enable', False, 'bool')
         self.PUSHOVER_USERTOKEN = self.read_config_var('pushover', 'enable', False, 'bool')
         self.ALARMCODE = self.read_config_var('envisalink', 'alarmcode', 1111, 'int')
+        self.DURESSCODE = self.read_config_var('envisalink', 'DURESScode', 0000, 'int')
         self.EVENTTIMEAGO = self.read_config_var('alarmserver', 'eventtimeago', True, 'bool')
         self.LOGFILE = self.read_config_var('alarmserver', 'logfile', '', 'str')
         global LOGTOFILE
