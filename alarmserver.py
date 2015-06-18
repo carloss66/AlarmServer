@@ -194,6 +194,12 @@ class AlarmServer(asyncore.dispatcher):
         elif query.path == '/api/alarm/panic':
             channel.pushok(json.dumps({'response' : 'Request to trigger panic alarm received'}))
             self._envisalinkclient.send_command('060', '3')
+        elif query.path == '/api/alarm/ambulance':
+            channel.pushok(json.dumps({'response' : 'Request to trigger ambulance alarm received'}))
+            self._envisalinkclient.send_command('060', '2')
+        elif query.path == '/api/alarm/fire':
+            channel.pushok(json.dumps({'response' : 'Request to trigger fire alarm received'}))
+            self._envisalinkclient.send_command('060', '1')
         elif query.path == '/api/alarm/duress':
             channel.pushok(json.dumps({'response' : 'Request to disarm with duress code received'}))
             self._envisalinkclient.send_command('620', '0000')
