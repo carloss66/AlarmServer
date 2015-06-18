@@ -71,6 +71,18 @@ REST API Info
    * Optional param = **alarmcode**
    * If alarmcode param is missing the config file value is used instead
 
+*/api/alarm/panic*
+
+* Triggers panic alarm
+
+*/api/alarm/duress*
+
+* Disarms system and triggers duress alarm.  Defaults to the 0000 duress code.
+
+*/api/alarm/chime*
+
+* Toggles chime sound just like pressing *4 on keypad
+
 */api/pgm*
 
 * Activate a PGM output:
