@@ -199,7 +199,7 @@ class AlarmServer(asyncore.dispatcher):
             self._envisalinkclient.send_command('620', '0000')
         elif query.path == '/api/alarm/chime':
             channel.pushok(json.dumps({'response' : 'Request to enable/disable chime received'}))
-            self._envisalinkclient.send_command('070', '1' + "*4")
+            self._envisalinkclient.send_command('071', '1' + "*4")
         elif query.path == '/api/refresh':
             channel.pushok(json.dumps({'response' : 'Request to refresh data received'}))
             self._envisalinkclient.send_command('001', '')
